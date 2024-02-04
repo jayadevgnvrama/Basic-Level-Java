@@ -1,128 +1,79 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
- */
-package ToDoList;
+import java.util.ArrayList;
+import java.util.Scanner;
 
-/**
- *
- * @author Dell
- */
-import java.util.*;
-
-public class ToDoList {
-    private static ArrayList<String> tasks = new ArrayList<String>();
+public class TaskListApp {
+    private static ArrayList<String> taskList = new ArrayList<>();
+    private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        int choice;
+        displayMenu();
+    }
 
+    private static void displayMenu() {
         while (true) {
-            System.out.println("1. Add task");
-            System.out.println("2. Complete task");
-            System.out.println("3. Edit task");
-            System.out.println("4. View tasks");
-            System.out.println("5. Exit");
-            System.out.println();
+            System.out.println("\nTask List Application");
+            System.out.println("1. Add Task");
+            System.out.println("2. Remove Task");
+            System.out.println("3. List Tasks");
+            System.out.println("4. Exit");
             System.out.print("Enter your choice: ");
 
-            try {
-                choice = in.nextInt();
+            int choice = scanner.nextInt();
+            scanner.nextLine(); // Consume the newline character
 
-                switch (choice) {
-                    case 1:
-                        addTask();
-                        break;
-                    case 2:
-                        completeTask();
-                        break;
-                    case 3:
-                        editTask();
-                        break;
-                    case 4:
-                        viewTasks();
-                        break;
-                    case 5:
-                        exit();
-                        break;
-                    default:
-                        System.out.println("Invalid choice. Please try again.");
-                        break;
-                }
-            } catch (InputMismatchException e) {
-                System.out.println("Invalid input. Please enter a number.");
-                in.nextLine();
+            switch (choice) {
+                case 1:
+                    addTask();
+                    break;
+                case 2:
+                    removeTask();
+                    break;
+                case 3:
+                    listTasks();
+                    break;
+                case 4:
+                    System.out.println("Exiting Task List Application. Goodbye!");
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.println("Invalid choice. Please try again.");
             }
         }
     }
 
     private static void addTask() {
-        Scanner in = new Scanner(System.in);
-        System.out.print("Enter task: ");
-        tasks.add(in.nextLine());
-        System.out.println();
+        System.out.print("Enter the task: ");
+        String task = scanner.nextLine();
+        taskList.add(task);
+        System.out.println("Task added successfully!");
     }
 
-    private static void completeTask() {
-        Scanner in = new Scanner(System.in);
-        int taskNum;
-
-        viewTasks();
-        try {
-            taskNum = in.nextInt();
-            if (taskNum <= 0 || taskNum > tasks.size()) {
-                throw new IndexOutOfBoundsException();
-            }
-            tasks.remove(taskNum - 1);
-        } catch (InputMismatchException e) {
-            System.out.println("Invalid input. Please enter a number.");
-            in.nextLine();
-        } catch (IndexOutOfBoundsException e) {
-            System.out.println("Invalid task number. Please try again.");
-        }
-    }
-    private static void editTask() {
-        Scanner in = new Scanner(System.in);
-        int taskNum;
-        String newTask;
-        viewTasks();
-        
-        System.out.print("Enter task number to edit: ");
-        try {
-            taskNum = in.nextInt();
-            if (taskNum <= 0 || taskNum > tasks.size()) {
-                throw new IndexOutOfBoundsException();
-            }
-            in.nextLine();
-            System.out.print("Enter new task description: ");
-            newTask = in.nextLine();
-            tasks.set(taskNum-1, newTask);
-            System.out.println();
-        } catch (InputMismatchException e) {
-            System.out.println("Invalid input. Please enter a number.");
-            in.nextLine();
-            System.out.println();
-        } catch (IndexOutOfBoundsException e) {
-            System.out.println("Invalid task number. Please try again.");
-        }
-    }
-    
-    private static void viewTasks() {
-        if (tasks.isEmpty()) {
-            System.out.println("No tasks to display");
+    private static void removeTask() {
+        if (taskList.isEmpty()) {
+            System.out.println("Task list is empty. No tasks to remove.");
         } else {
-            System.out.println();
-            System.out.println("----- Tasks available -----");
-            for (int i = 0; i < tasks.size(); i++) {
-                System.out.println((i + 1) + ". " + tasks.get(i));
+            System.out.println("Current tasks:");
+            listTasks();
+            System.out.print("Enter the task number to remove: ");
+            int taskNumber = scanner.nextInt();
+
+            if (taskNumber >= 1 && taskNumber <= taskList.size()) {
+                taskList.remove(taskNumber - 1);
+                System.out.println("Task removed successfully!");
+            } else {
+                System.out.println("Invalid task number. Please try again.");
             }
-            System.out.println("---------------------------");
-            System.out.println();
         }
     }
 
-    private static void exit() {
-        System.out.println("Exiting program");
-        System.exit(0);
+    private static void listTasks() {
+        if (taskList.isEmpty()) {
+            System.out.println("Task list is empty.");
+        } else {
+            System.out.println("Task List:");
+            for (int i = 0; i < taskList.size(); i++) {
+                System.out.println((i + 1) + ". " + taskList.get(i));
+            }
+        }
     }
 }
