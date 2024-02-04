@@ -47,6 +47,7 @@ Example:
 ```bash
 javac TaskListApp.java
 java TaskListApp
+```
 
 ## 6. Sample Output <a name="sample-output"></a>
 
@@ -70,7 +71,7 @@ Task List:
 
 ...
 
-7. Future Enhancements <a name="future-enhancements"></a>
+## 7. Future Enhancements <a name="future-enhancements"></a>
 Possible future enhancements include:
 
 Save and Load: Implement functionality to save the task list to a file and load it upon application startup.
@@ -79,5 +80,5 @@ Task Priority: Allow users to set priorities for tasks.
 
 User Authentication: Implement user authentication for personalized task lists.
 
-8. Conclusion <a name="conclusion"></a>
+## 8. Conclusion <a name="conclusion"></a>
 The Task List Application provides a basic yet functional task management system. Users can easily interact with the application through the text-based interface, making it a straightforward tool for managing tasks. Further improvements can be made to enhance its functionality and usability.
