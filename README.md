@@ -14,6 +14,8 @@
 The Task List Application is designed to simplify task management through a text-based user interface. Developed in Java, this application allows users to interact with their task list by adding, removing, and listing tasks. The simplicity of the interface makes it accessible to users who prefer a command-line environment for task organization.
 
 ## 2. Features
+Task list application contains the following features:
+
 ### 2.1 Add Task
 The "Add Task" feature enables users to input a task description via the command line. The application then appends the task to an ArrayList, which serves as the underlying data structure for the task list. Upon successful addition, users receive a confirmation message, enhancing the user experience.
 
