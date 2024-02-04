@@ -81,11 +81,11 @@ The future enhancements section outlines potential improvements and additional f
 
 Possible future enhancements include:
 
-**Save and Load**: Implement functionality to save the task list to a file and load it upon application startup.
+**Save and Load:** Implement functionality to save the task list to a file and load it upon application startup.
 
-**Task Priority**: Allow users to set priorities for tasks.
+**Task Priority:** Allow users to set priorities for tasks.
 
-**User Authentication**: Implement user authentication for personalized task lists.
+**User Authentication:** Implement user authentication for personalized task lists.
 
 ## 8. Conclusion <a name="conclusion"></a>
 The conclusion summarizes the key aspects of the Task List Application and emphasizes its current strengths and areas for improvement. It serves as a reflection on the application's capabilities and sets the stage for future development and refinement.
