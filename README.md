@@ -26,7 +26,7 @@ Users can view the current tasks in the list. The application displays each task
 ### 2.4 Exit
 Users can exit the application at any time. The program provides a clean exit message and terminates.
 
-## 3. Usage <a name="usage"></a>
+## 3. Usage 
 To use the Task List Application, follow these steps:
 1. Run the application.
 2. Choose from the menu options (Add Task, Remove Task, List Tasks, Exit) by entering the corresponding number.
