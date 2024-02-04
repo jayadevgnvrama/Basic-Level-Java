@@ -69,7 +69,7 @@ Enter your choice: 3
 Task List:
 1. Complete documentation
 
-...
+
 
 ## 7. Future Enhancements <a name="future-enhancements"></a>
 Possible future enhancements include:
